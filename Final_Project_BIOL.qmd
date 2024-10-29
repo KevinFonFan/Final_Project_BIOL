@@ -1,0 +1,30 @@
+---
+title: "Final_Project_BIOL"
+author: "Kevin Fantinatti"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+---
+
+# Introduction
+
+Provide an introduction to your project here. This section will describe the project's objective, background information, and the main goals you aim to achieve.
+
+# Methods
+
+Describe your research methodology here. Explain the experimental design, data sources, and analytical methods.
+
+# Results
+
+Summarize the findings of your data analysis here. Use this section for visualizations, tables, or descriptive statistics.
+
+# Discussion
+
+Discuss the significance of your findings and any limitations. Suggest potential improvements and implications for future research.
+
+# Conclusion
+
+Summarize the project’s main points and suggest any concluding remarks.
