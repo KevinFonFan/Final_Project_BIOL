@@ -1,26 +1,35 @@
------
-title: "Final_Project_BIOL"
-author: "Kevin Fantinatti"
-format: 
-  html:
-    
----
+|                                                                      |
+|----------------------------------------------------------------------|
+| title: "Final_Project_BIOL" author: "Kevin Fantinatti" format: html: |
 
 # Introduction
-Here will be my introduction.
 
-# Methods
+In the pursuit of sustainable strawberry cultivation, the practice of mulching plays a pivotal role in determining both yield and plant health. Traditional methods often involve the use of black plastic mulch, which effectively suppresses weeds but restricts the natural growth of strawberry plants, preventing them from sending out runners.
 
+As a result, many growers replant after a few years to maintain optimal production levels. However, some growers opt to extend the life of their existing plantings under plastic for an additional season, driven by the significant costs associated with establishing new crops. This raises an important question: would transitioning from plastic mulch to straw mulch — often referred to as "renovation" — benefit these growers by enhancing yield?
 
+This study aims to explore this question by examining the impact of such a transition on three different varieties of strawberries, providing valuable insights for growers in the Northeast looking to optimize their practices and ensure the sustainability of their operations.
+
+The hypothesis is that Straw plots would produce better results because the plants can root runners into the soil without being obstructed by black plastic. We believe this natural rooting process will enhance the overall growth and yield of the plants.
+
+# Material and Methods
+
+## Treatments
+
+This study evaluated three varieties of crops, all of which were scheduled for harvest in June. The varieties included Wendy, which was noted for its early production, Allstar, which had a mid-range harvest time, and Valley Sunset, the latest of the three varieties.
+
+## Mulch Treatments
+
+Two distinct mulch treatments were applied to the plots. The "Plastic" treatment involved plots that had previously been covered with plastic mulch, which was left in place for the duration of the study. The "Straw" treatment, on the other hand, consisted of plots that had originally been covered with plastic mulch, but this plastic was removed and replaced with straw mulch.
+
+## Data Collection
+
+Data was collected on the harvest date for each plot to track the timing of production across the different varieties. Additionally, vigor scores were assigned to each plot, reflecting the overall health and appearance of the crops, which exhibited a wide variability.
+
+Lastly, the row layout of the experimental design was considered as a potential blocking variable, although the particulars of this design were not fully defined, as it was overlaid on a previous experiment.
 
 # Results
 
-
-
 # Discussion
 
-
-
 # Conclusion
-
-
