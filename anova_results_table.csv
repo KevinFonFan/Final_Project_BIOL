@@ -1,0 +1,5 @@
+"Term","DF","F_Statistic","P_Value"
+"Variety",2,1.35343735674292,"0.261"
+"Treatment",1,20.3602180714794,"<0.001"
+"Variety:Treatment",2,1.62918531664841,"0.198"
+"Residuals",217,NA,NA

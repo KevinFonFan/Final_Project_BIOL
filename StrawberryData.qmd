@@ -1,0 +1,55 @@
+---
+title: "Final-Project-Data"
+format: html
+editor: visual
+---
+# Uploading the data
+```{r}
+strawberrydata <- read.csv("C:\\Users\\kevin\\OneDrive\\Documentos\\R\\Final Project\\Data\\2024RenovationStrawberryData.csv") 
+```
+# 
+```{r}
+head(strawberrydata)
+summary(strawberrydata)
+
+```
+```{r}
+library(dplyr)
+```
+
+# Cleaning data for marketable yield to discover each variety have better perfomance for market.
+```{r}
+data_clean <- strawberrydata %>%
+  drop_na(Marketable.Yield..g.)
+  
+```
+
+# The average yield for each Variety under each Treatment.
+```{r}
+yield <- data_clean %>%
+  group_by(Variety,Treatment) %>%
+  summarize(Mean_Yield = mean(Marketable.Yield..g.), .groups = "drop")
+
+print(yield)
+```
+```{r}
+library(ggplot2)
+```
+
+
+```{r}
+ggplot(data = yield, aes(x = Variety, y = Mean_Yield, fill = Treatment)) +
+  geom_bar(stat = 'identity', position = "dodge") +
+  labs(
+    title = "Marketable Crop Yield Comparison by Variety and Mulch type",
+    x = "Variety",
+    y = "Mean Yield"
+  ) +
+  scale_fill_manual(values = c("Plastic" = "black","Straw" = "brown"))+
+  theme_bw() 
+```
+
+```{r}
+
+```
+
