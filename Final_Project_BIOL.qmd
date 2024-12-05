@@ -1,5 +1,5 @@
 ---
-title: "Impact of Mulch on Three Strawberry Varieties"
+title: "Impact of Mulch on Strawberry Production"
 subtitle: "Final Project"
 author: "Kevin Fantinatti"
 format: pdf
@@ -10,9 +10,9 @@ This study investigates the impact of transitioning from plastic mulch to straw 
 
 # Introduction
 
-In the pursuit of sustainable strawberry cultivation, the practice of mulching plays a pivotal role in determining both yield and plant health. Traditional methods often involve the use of black plastic mulch, which effectively suppresses weeds but restricts the natural growth of strawberry plants, preventing them from sending out runners.
+In the pursuit of sustainable strawberry cultivation, the practice of mulching plays a pivotal role in determining both yield and plant health. Traditional methods often involve the use of black plastic mulch, which effectively suppresses weeds but restricts the natural growth of strawberry plants, preventing them from sending out runners (Orde & Sideman, 2023).
 
-As a result, many growers replant after a few years to maintain optimal production levels. However, some growers opt to extend the life of their existing plantings under plastic for an additional season, driven by the significant costs associated with establishing new crops. This raises an important question: would transitioning from plastic mulch to straw mulch — often referred to as "renovation" — benefit these growers by enhancing yield?
+As a result, many growers replant after a few years to maintain optimal production levels. However, some growers opt to extend the life of their existing plantings under plastic for an additional season, driven by the significant costs associated with establishing new crops. This raises an important question: would transitioning from plastic mulch to straw mulch benefit these growers by enhancing yield?
 
 This study aims to explore this question by examining the impact of such a transition on three different varieties of strawberries, providing valuable insights for growers in the Northeast looking to optimize their practices and ensure the sustainability of their operations.
 
@@ -185,3 +185,6 @@ This study aimed to assess the impact of transitioning from plastic to straw mul
 The results indicate that removing plastic and replacing it with straw mulch can have a positive effect on yield. This is likely due to the enhanced root development afforded by the absence of the plastic barrier, allowing the plants to send out runners and establish a more robust root system. Our hypothesis that Straw plots would yield better than Plastic plots was supported by the data collected and statistical analysis, demonstrating the advantages of this technique.
 
 In conclusion, the transition to straw mulch represents a promising strategy for growers who wish to maximize the longevity and productivity of their strawberry crops. By adopting this practice, producers can capitalize on enhanced yields and healthier plants, ultimately leading to more sustainable strawberry cultivation in the region. As farmers continue to seek methods that balance economic viability with environmental stewardship, this study underscores the potential benefits of exploring alternative mulching practices. Further research is recommended to explore the long-term effects of straw mulch on soil health and additional crop varieties, ensuring that strawberry growers can make informed decisions for their operations.
+
+# Literature cited
+Orde, K. and B. Sideman (Eds.). 2023. Strawberry Production Guide for the Northeast, Midwest, and Eastern Canada. University of New Hampshire Cooperative Extension, Durham, NH.

@@ -30,10 +30,10 @@ yield <- data_clean %>%
   group_by(Variety,Treatment) %>%
   summarize(Mean_Yield = mean(Marketable.Yield..g.), .groups = "drop")
 
-print(yield)
+kable(yield)
 ```
 ```{r}
-library(ggplot2)
+library("ggplot2")
 ```
 
 
@@ -49,7 +49,196 @@ ggplot(data = yield, aes(x = Variety, y = Mean_Yield, fill = Treatment)) +
   theme_bw() 
 ```
 
+# Statistical Model - ANOVA - for Yield
+```{r}
+anova_model <- aov(Marketable.Yield..g. ~ Variety * Treatment, data = data_clean)
+
+summary(anova_model)
+
+```
+# Results: 
+### Varieties does not have significant different yields.
+### Mulch type affects significatly the yields.
+### The mulch type affects equally all strawberry varieties. 
+
+# ANOVA Table:
+```{r}
+anova_results <- summary(anova_model)
+
+anova_table <- broom::tidy(anova_model) %>%
+  select(term, df, statistic, p.value) %>%
+  rename(
+    Term = term,
+    DF = df,
+    F_Statistic = statistic,
+    P_Value = p.value
+  )
+
+print(anova_table)
+```
+
+```{r}
+install.packages("ggpubr")
+
+```
+```{r}
+library(ggpubr)
+ggplot(anova_model, aes(x = Treatment, y = Marketable.Yield..g., fill = Treatment)) +
+  geom_boxplot() +
+  stat_summary(fun = "mean", geom = "point", shape = 20, size = 3, color = "black") +
+  labs(
+    title = "Effect of Mulch Treatment on Yield",
+    x = "Treatment",
+    y = "Yield"
+  ) +
+  theme_minimal() +
+  scale_fill_manual(values = c("Plastic" = "lightblue", "Straw" = "lightgreen"))
+  
+```
+
+```{r}
+ggplot(anova_model, aes(x = interaction(Variety, Treatment), y = Marketable.Yield..g., fill = Treatment)) +
+  geom_boxplot() +
+  labs(
+    title = "Yield by Variety and Treatment",
+    x = "Variety and Treatment",
+    y = "Yield"
+  ) +
+  scale_fill_manual(values = c("Plastic" = "lightblue", "Straw" = "pink")) +
+  theme_minimal()
+
+```
+
 ```{r}
 
 ```
+
+
+```{r}
+ggplot(data = data_clean, aes(x = Variety, y = Marketable.Yield..g., fill = Variety)) +
+  geom_boxplot() +
+  labs(title = "Distribution of Marketable Yield by Variety",
+    x = "Variety",
+    y = "Yield"
+  ) +
+  theme_minimal() 
+
+```
+
+```{r}
+ggplot(data = data_clean, aes(x = Treatment, y = Marketable.Yield..g., fill = Treatment)) +
+  geom_boxplot() +
+  labs(title = "Distribution of Marketable Yield by Treatment",
+    x = "Treatment",
+    y = "Yield"
+  ) +
+  scale_fill_manual(values = c("Plastic" = "black","Straw" = "brown"))+
+  theme_minimal() 
+```
+
+
+### SPACE
+
+
+```{r}
+vigor <- data_clean %>%
+  group_by(Variety,Vigor) %>%
+  summarize(Mean_Vigor = mean(Vigor), .groups = "drop")
+
+vigor_nona <- vigor %>%
+  drop_na(Vigor)
+
+print(vigor)
+
+```
+```{r}
+ggplot(data_clean, aes(x = Treatment, y = Vigor, fill = Treatment)) +
+  geom_boxplot() +
+  labs(
+    title = "Comparison of Vigor Scores by Treatment",
+    x = "Treatment",
+    y = "Vigor Score"
+  ) +
+  theme_minimal()
+
+```
+
+```{r}
+vigor_na <- data_clean %>%
+  group_by(Treatment,Vigor)
+
+
+
+ggplot(data = vigor_na, aes(x = Treatment, y = Vigor, fill = Treatment)) +
+  geom_boxplot() +
+  labs(title = "Distribution of Vigor Scores by Variety",
+    x = "Variety",
+    y = "Vigor Score"
+  ) +
+  theme_minimal() 
+
+```
+```{r}
+
+ggplot(data_clean, aes(x = Vigor, y = Marketable.Yield..g., colour = Treatment)) +
+  geom_point(size = 3, alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE, aes(group = Treatment), linetype = "dashed") +
+  facet_wrap(~ Variety) +  # Facet by Variety
+  labs(
+    title = "Scatter Plot: Vigor Scores vs. Yield (Faceted by Variety)",
+    x = "Vigor Score",
+    y = "Yield",
+    color = "Mulch Type"
+  ) +
+  theme_minimal() +
+  scale_color_brewer(palette = "Set2")
+
+```
+
+
+```{r}
+ggplot(data = data_clean, aes(x = Variety, y = Marketable.Yield..g., fill = Treatment)) +
+  geom_boxplot()+
+  labs(
+    title = "Marketable Crop Yield Comparison by Variety and Mulch type",
+    x = "Variety",
+    y = "Yield"
+  ) +
+  scale_fill_manual(values = c("Plastic" = "black","Straw" = "brown"))+
+  theme_bw() 
+```
+
+
+
+
+####
+
+# Cleaning data for marketable yield to discover each variety have better perfomance for market.
+```{r}
+un_data_clean <- data_clean %>%
+  drop_na(Unmarketable.Yield..g.)
+  
+```
+
+# The average yield for each Variety under each Treatment.
+```{r}
+un_yield <- un_data_clean %>%
+  group_by(Variety,Treatment) %>%
+  summarize(Mean_un_Yield = mean(Unmarketable.Yield..g.), .groups = "drop")
+
+print(un_yield)
+```
+
+```{r}
+ggplot(data = un_yield, aes(x = Variety, y = Mean_un_Yield, fill = Treatment)) +
+  geom_bar(stat = 'identity', position = "dodge") +
+  labs(
+    title = "Unmarketable Crop Yield Comparison by Variety and Mulch type",
+    x = "Variety",
+    y = "Mean Yield"
+  ) +
+  scale_fill_manual(values = c("Plastic" = "black","Straw" = "brown"))+
+  theme_bw() 
+```
+
 
